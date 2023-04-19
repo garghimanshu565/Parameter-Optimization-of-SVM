@@ -81,6 +81,31 @@ test   <- myData[!sample, ]
   }
 }
 ```
+```{r}
+colnames(metrics)<-c("sample","iteration","accuracy","kernel","nu","epsilon")
+```
+```{r}
+metrics[which.max(metrics$accuracy),]
+```
+
+```{r}
+plt =metrics[metrics$sample==4,]
+```
+```{r}
+plt
+plot(plt$iteration,plt$accuracy,type='l',xlab="Iteration",ylab="Accuracy")
+```
+```{r}
+```
+```{r}
+```
+```{r}
+metrics$sample <- as.factor(metrics$sample)
+sam<-do.call(rbind, lapply(split(metrics,metrics$sample), function(x) {return(x[which.max(x$accuracy),])}))
+```
+```{r}
+sam$sample=as.numeric(sam$sample)
+sam %>% arrange(sample)
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
