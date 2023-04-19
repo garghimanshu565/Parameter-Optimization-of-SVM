@@ -15,7 +15,7 @@ kernelList=c("rbfdot","polydot","tanhdot","vanilladot","laplacedot","anovadot")
 ```{r}
 library(openxlsx)
 library(readxl)
-myData1<-read.xlsx("E:/TIET/6th sem/Predictive Analytics using Statistics/Adult.data")
+myData1<-read.xlsx("E:/TIET/6th sem/Predictive Analytics using Statistics/krkopt.data")
 myData<-as.data.frame(myData1)
 myData<-as.data.frame(sapply(myData,as.numeric))
 head(myData)
